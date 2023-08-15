@@ -1,0 +1,34 @@
+{
+  "songs": [
+    {
+      "Tag": "Anxiety",
+      "Artist": "Elvis Presly",
+      "Song": "Heartbreak Hotel",
+      "Duration": "2:08"
+    },
+    {
+      "Tag": "Dementia",
+      "Artist": "Elvis Presly",
+      "Song": "Hound Dog",
+      "Duration": "2:13"
+    },
+    {
+      "Tag": "Depression",
+      "Artist": "Elvis Presly",
+      "Song": "All Shook Up",
+      "Duration": "1:48"
+    },
+    {
+      "Tag": "Hearing",
+      "Artist": "Elvis Presly",
+      "Song": "Jailhouse Rock",
+      "Duration": "2:35"
+    },
+    {
+      "Tag": "Stress",
+      "Artist": "Elvis Presly",
+      "Song": "Stuck On You",
+      "Duration": "2:19"
+    }
+  ]
+}
