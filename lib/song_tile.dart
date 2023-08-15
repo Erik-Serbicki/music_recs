@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "hover.dart";
+import "play_song.dart";
 
 class SongTile extends StatelessWidget{
   const SongTile({super.key, required this.title, required this.artist, required this.duration});
@@ -12,28 +13,35 @@ class SongTile extends StatelessWidget{
     return Hover(
       builder: (isHovered){
         final color = isHovered ? Colors.green : Colors.white;
-        return Container(
-            height: 100,
-            color: color,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Image.network(
-                  "https://prodimage.images-bn.com/pimages/0888751209411_p0_v2_s1200x630.jpg",
-                  width: 95,
-                ),
-                const SizedBox(width: 20),
-                Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(title, style:  const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-                      Text(artist)
-                    ]
-                ),
-                const Spacer(),
-                Text(duration)
-              ],
-            )
+        return InkWell(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(
+                builder: (context) => PlaySong(title: title, artist: artist, duration: duration,))
+            );
+          },
+          child: Container(
+              height: 100,
+              color: color,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Image.network(
+                    "https://prodimage.images-bn.com/pimages/0888751209411_p0_v2_s1200x630.jpg",
+                    width: 95,
+                  ),
+                  const SizedBox(width: 20),
+                  Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(title, style:  const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+                        Text(artist)
+                      ]
+                  ),
+                  const Spacer(),
+                  Text(duration)
+                ],
+              )
+          ),
         );
       }
     );

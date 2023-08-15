@@ -19,6 +19,8 @@ class _MusicRecsState extends State<MusicRecs> {
   List _songs = [];
   final List _display = [];
 
+  int _selectedIndex = 0;
+
   Future<void> readJson() async{
     final String response = await rootBundle.loadString('assets/songs.json');
     final data = await jsonDecode(response);
@@ -38,6 +40,12 @@ class _MusicRecsState extends State<MusicRecs> {
           }
         }
       }
+    });
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
     });
   }
 
@@ -66,6 +74,21 @@ class _MusicRecsState extends State<MusicRecs> {
           ),
         )
       ),
-      );
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(Icons.music_note_rounded),
+              label: 'Music'
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle),
+              label: 'Account'
+          )
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        iconSize: 40,
+      ),
+    );
   }
 }
