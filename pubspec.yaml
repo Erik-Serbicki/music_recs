@@ -75,6 +75,7 @@ flutter:
       - assets/music/heartbreak_hotel.mp3
       - assets/music/hound_dog.mp3
       - assets/music/jailhouse_rock.mp3
+      - assets/images/icon_transparent.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

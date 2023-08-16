@@ -41,15 +41,11 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               end: Alignment.topRight
           ),
         ),
-        child: const Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-                Icons.queue_music_outlined,
-                size: 90,
-                color: Colors.white,
-            ),
-            SizedBox(height: 20,)
+            Image.asset("assets/images/icon_transparent.png", height: 250,),
+            const SizedBox(height: 20,)
           ],
         )
       )
