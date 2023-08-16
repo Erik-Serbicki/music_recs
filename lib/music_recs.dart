@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'song_tile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+
 
 import 'package:flutter/services.dart';
 
@@ -21,9 +26,12 @@ class _MusicRecsState extends State<MusicRecs> {
 
   int _selectedIndex = 0;
 
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+
   Future<void> readJson() async{
-    final String response = await rootBundle.loadString('assets/songs.json');
-    final data = await jsonDecode(response);
+    CollectionReference songs = FirebaseFirestore.instance.collection('songs');
+    final DocumentReference doc = songs.doc("U2eQo71NcY2uVku9SHf4");
+    final data = await doc.get();
     List checks = [];
     Map options = widget.options;
     for(var key in options.keys){

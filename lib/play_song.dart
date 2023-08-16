@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'audio_player.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class PlaySong extends StatefulWidget {
   const PlaySong({super.key, required this.artist, required this.title, required this.duration});
@@ -14,9 +16,28 @@ class PlaySong extends StatefulWidget {
 }
 
 class _PlaySongState extends State<PlaySong> {
+  late AudioPlayer advancedPlayer;
+  late String filePath;
+
+  String filePicker(){
+    String path = "";
+
+    path = "music/${widget.title.toLowerCase().replaceAll(" ", "_")}.mp3";
+
+    return path;
+  }
+
+  @override
+  void initState(){
+    super.initState();
+    advancedPlayer = AudioPlayer();
+    filePath = filePicker();
+    print(filePath);
+  }
+
   @override
   Widget build(BuildContext context) {
-    final double screenHieght = MediaQuery.of(context).size.height;
+    final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
@@ -26,7 +47,7 @@ class _PlaySongState extends State<PlaySong> {
               top: 0,
               left: 0,
               right: 0,
-              height: screenHieght/3,
+              height: screenHeight/3,
               child: Container(
                 color: Colors.deepPurpleAccent,
               )
@@ -40,7 +61,7 @@ class _PlaySongState extends State<PlaySong> {
                 elevation: 0.0,
                 leading: IconButton(
                   icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white,),
-                  onPressed: (){},
+                  onPressed: ()=>Navigator.of(context).pop(),
                 ),
                 actions: [
                   IconButton(
@@ -53,8 +74,8 @@ class _PlaySongState extends State<PlaySong> {
           Positioned(
               left: 0,
               right: 0,
-              top: screenHieght*0.3,
-              height: screenHieght*0.3,
+              top: screenHeight*0.3,
+              height: screenHeight*0.5,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
@@ -63,15 +84,16 @@ class _PlaySongState extends State<PlaySong> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(height: screenHieght*0.1),
+                    SizedBox(height: screenHeight*0.1),
                     Text(widget.title.toUpperCase(), style: GoogleFonts.lato(fontSize: 30, fontWeight: FontWeight.bold),),
-                    Text(widget.artist, style: GoogleFonts.lato(fontSize: 20, color: Colors.black54))
+                    Text(widget.artist, style: GoogleFonts.lato(fontSize: 20, color: Colors.black54)),
+                    AdvancedAudioPlayer(advancedPlayer: advancedPlayer, file_path: filePath,),
                   ],
                 ),
               )
           ),
           Positioned(
-              top: screenHieght*0.12,
+              top: screenHeight*0.1,
               left: (screenWidth-225)/2,
               right: (screenWidth-225)/2,
               child: Container(
@@ -80,7 +102,7 @@ class _PlaySongState extends State<PlaySong> {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(25),
-                  child: Image.network("https://prodimage.images-bn.com/pimages/0888751209411_p0_v2_s1200x630.jpg"),
+                  child: Image.asset("assets/images/30th.jpg"),
                 )
               )
           )

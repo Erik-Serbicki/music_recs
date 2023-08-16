@@ -38,6 +38,10 @@ dependencies:
   sprung: ^3.0.1
   audioplayers: ^5.1.0
   google_fonts: ^5.1.0
+  firebase_auth: ^4.7.2
+  cloud_firestore: ^4.8.4
+  firebase_storage: ^11.2.5
+  firebase_core: ^2.15.0
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +70,7 @@ flutter:
       - assets/songs.json
       - assets/images/30th.jpg
       - google_fonts/
+      - assets/music/stuck_on_you.mp3
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
