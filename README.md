@@ -1,3 +1,3 @@
 # Zentha Music App
 
-Repository for prototype music reccomendation app.
+Repository for prototype music recomendation app.
