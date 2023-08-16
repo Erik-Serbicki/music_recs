@@ -32,7 +32,6 @@ class _AdvancedAudioPlayerState extends State<AdvancedAudioPlayer> {
     widget.advancedPlayer.onPositionChanged.listen((p) { setState(() {
       _position = p;
     });});
-    print(widget.file_path);
     widget.advancedPlayer.setSourceAsset(widget.file_path);
     widget.advancedPlayer.onPlayerComplete.listen((event){
       setState(() {

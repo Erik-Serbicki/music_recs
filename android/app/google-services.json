@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "813774604272",
+    "project_id": "music-recs-9df71",
+    "storage_bucket": "music-recs-9df71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813774604272:android:cc69ee134e2e411eb6bf35",
+        "android_client_info": {
+          "package_name": "com.codingminds.musicrecs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813774604272-4vph25b84vigdh8f684ih59sil4d2fei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnIvESgFJm3KTUHkSU_sDu1npM4gzwCjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813774604272-4vph25b84vigdh8f684ih59sil4d2fei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
