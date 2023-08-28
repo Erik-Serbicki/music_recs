@@ -26,7 +26,7 @@ class SongTile extends StatelessWidget{
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image.asset(
-                    "assets/images/30th.jpg",
+                    "assets/images/web_hi_res_512.png",
                     width: 95,
                   ),
                   const SizedBox(width: 20),

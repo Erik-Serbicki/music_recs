@@ -70,12 +70,13 @@ flutter:
       - assets/songs.json
       - assets/images/30th.jpg
       - google_fonts/
-      - assets/music/stuck_on_you.mp3
-      - assets/music/all_shook_up.mp3
-      - assets/music/heartbreak_hotel.mp3
-      - assets/music/hound_dog.mp3
-      - assets/music/jailhouse_rock.mp3
+      - assets/music/home_at_last.mp3
+      - assets/music/interstellar_space.mp3
+      - assets/music/secret_agent_rock.mp3
+      - assets/music/skysand.mp3
+      - assets/music/waves.mp3
       - assets/images/icon_transparent.png
+      - assets/images/web_hi_res_512.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
